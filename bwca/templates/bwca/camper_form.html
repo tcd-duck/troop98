@@ -1,0 +1,24 @@
+{% extends "base_generic.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <h2>Add or edit camper status:</h2>
+    <p><em>Note:</em> If you add a new name that is already in the record,
+        (same first and last name), you will get an error. I did not want to
+        add the code to prevent it!</p>
+    <p>You are <strong>NOT</strong> committing to this trip by filling out this form. Please
+        update the <strong>Commitment</strong> field below as as either <em>Interested, Committed, or Cannot Attend</em>
+        so we can understand the interest level</em></p>
+    <p>Please select the weeks at the bottom of the form that you could make
+        the trip. You can come back and make changes as needed. Make sure to
+        select <strong>Save</strong> at the bottom when you are done.</p>
+
+  <form action="" method="post">
+    {% csrf_token %}
+    <table>
+    {{ form|crispy }}
+    </table>
+    <input type="submit" value="Save">
+  </form>
+{% endblock %}

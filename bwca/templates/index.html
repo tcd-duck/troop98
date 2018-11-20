@@ -1,0 +1,18 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Troop 98 Boundary Water Canoe Area Trip - 2019</h1>
+  <p>Welcome to the Troop 98 Boundary Water trip website. Bookmark this page to keep up with the details of the trip</p>
+    <p>To get started, click <strong>Camper Status</strong> below. You are not committing to the trip
+    at this point, you are only providing your status. </p>
+  <h2>Trip Stats:</h2>
+    <p></p>
+    <ul>
+        <li><strong>Campers Interested:</strong> {{ num_interested }}</li>
+        <li><strong>Campers Committed:</strong> {{ num_committed }}</li>
+        <li><strong>Campers Paid:</strong> {{ num_epics }}</li>
+        <li><strong>Campers Checklist Complete <em>Coming Soon!:</em> {{ num_ready }}</li>
+    </ul>
+
+
+{% endblock %}

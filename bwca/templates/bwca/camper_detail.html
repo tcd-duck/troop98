@@ -1,0 +1,28 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h2>Edit camper details:</h2>
+  <p><strong>First Name:</strong> {{ camper.first_name }}</p>
+  <p><strong>Last Name:</strong> {{ camper.last_name }}</p>
+  <p><strong>Role:</strong> {{ camper.role }}</p>
+  <p><strong>Commitment:</strong> {{ camper.commitment }}</p>
+{#  <!-- <p><strong>Website:</strong> {% for interview in customer.interview.all %} {{ interview }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>   -->#}
+
+{#  <div style="margin-left:20px;margin-top:20px">#}
+{#    <h4>Something</h4>#}
+{##}
+{#    <!-- {% for copy in book.bookinstance_set.all %}#}
+{#      <hr>#}
+{#      <p class="{% if copy.status == 'a' %}text-success{% elif copy.status == 'm' %}text-danger{% else %}text-warning{% endif %}">{{ copy.get_status_display }}</p>#}
+{#      {% if copy.status != 'a' %}#}
+{#        <p><strong>Last Contacted:</strong> {{copy.due_back}}</p>#}
+{#      {% endif %}#}
+{#      <p><strong>Imprint:</strong> {{copy.imprint}}</p>#}
+{#      <p class="text-muted"><strong>Id:</strong> {{copy.id}}</p>#}
+{#    {% endfor %} -->#}
+{#  </div>#}
+    <div class="container"></div>
+ <li><a href="{{camper.slug}}{{"/update"}}">Edit Camper</a></li>
+ <li><a href="{{camper.slug}}{{"/delete"}}">Delete Camper</a></li>
+{% endblock %}
+

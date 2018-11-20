@@ -1,0 +1,35 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h2>Camper List</h2>
+  {% if camper_list %}
+
+    <div class="container">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Camper Name</th>
+                    <th>Roles</th>
+                    <th>Interest</th>
+                    <th>Paid</th>
+                    <th>Ready</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in camper_list %}
+                <tr>
+                    <td><a href="{% url 'camperdetail' item.slug %}">{{ item.first_name }} {{ item.last_name }}</a></td>
+                    <td>{{ item.role }}</td>
+                    <td>{{ item.commitment }}</td>
+                    <td> </td>
+                    <td> </td>
+                </tr>
+                {%  endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% else %}
+    <p>There are no campers in the registry.</p>
+  {% endif %}
+    <p><a href="{% url 'camper_create' %}">Add a Camper</a></p>
+  {% endblock %}

@@ -1,0 +1,79 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h2>Camper Availability Overview</h2>
+    <p>If you need to change your availability status, click on <em>your name</em> below, or else selct the <em>Campers</em> link,
+        select your name, then select <em>Edit Camper.</em></p>
+  {% if camper_context %}
+
+    <div class="container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Camper Name</th>
+                    <th>Jun 30</th>
+                    <th>Jul 7</th>
+                    <th>Jul 14</th>
+                    <th>Jul 21</th>
+                    <th>Jul 28</th>
+                    <th>Aug 4</th>
+                    <th>Aug 11</th>
+                    <th>Aug 18</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in camper_context %}
+
+                <tr>
+                    <td><a href="{% url 'camperdetail' item.slug %}">{{ item.first_name }} {{ item.last_name }}</a></td>
+                    {% if item.week1 %}
+                        <td style="background-color: green">Available</td>
+                    {%  else %}
+                        <td>No</td>
+                    {% endif %}
+                    {% if item.week2 %}
+                        <td style="background-color: green">Available</td>
+                    {%  else %}
+                        <td>No</td>
+                    {% endif %}
+                    {% if item.week3 %}
+                        <td style="background-color: green">Available</td>
+                    {%  else %}
+                        <td>No</td>
+                    {% endif %}
+                    {% if item.week4 %}
+                        <td style="background-color: green">Available</td>
+                    {%  else %}
+                        <td>No</td>
+                    {% endif %}
+                    {% if item.week5 %}
+                        <td style="background-color: green">Available</td>
+                    {%  else %}
+                        <td>No</td>
+                    {% endif %}
+                    {% if item.week6 %}
+                        <td style="background-color: green">Available</td>
+                    {%  else %}
+                        <td>No</td>
+                    {% endif %}
+                    {% if item.week7 %}
+                        <td style="background-color: green">Available</td>
+                    {%  else %}
+                        <td>No</td>
+                    {% endif %}
+                    {% if item.week8 %}
+                        <td style="background-color: green">Available</td>
+                    {%  else %}
+                        <td>No</td>
+                    {% endif %}
+                </tr>
+
+                {%  endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% else %}
+    <p>There are no campers in the registry.</p>
+  {% endif %}
+    <p><a href="{% url 'camper_create' %}">Add a Camper</a></p>
+  {% endblock %}

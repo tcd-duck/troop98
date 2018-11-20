@@ -1,0 +1,16 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Availability Summary</h1>
+  {% if availabledate_list %}
+  <ul>
+    {% for item in availabledate_list %}
+      <li>
+        <a href="{% url 'available-detail' availabledate_list.camper %}">{{ availabledate_list.week1 }}</a> -- ({{availabledate_list.week2}})
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>There are no customers in the library.</p>
+  {% endif %}
+{% endblock %}

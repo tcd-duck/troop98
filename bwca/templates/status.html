@@ -1,0 +1,27 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Camper Status</h1>
+    <div class="mytable">
+    <table>
+        <tr>
+            <th>Camper</th>
+            <th> </th>
+            <th>Roles</th>
+            <th>Interest</th>
+            <th>Paid</th>
+            <th>Ready</th>
+        </tr>
+        {% for item in camper_context %}
+        <tr>
+            <td>{{ item.first_name }}</td>
+            <td>{{ item.last_name }}</td>
+            <td>{{ item.role }}</td>
+            <td>{{ item.commitment }}</td>
+
+        </tr>
+        {%  endfor %}
+
+    </table>
+    </div>
+{% endblock %}
